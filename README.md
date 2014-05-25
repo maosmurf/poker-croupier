@@ -109,7 +109,7 @@ At this point we do not yet have rake targets or integration tests that can help
 
 If you wish to hold a poker tournament than there is another script - `croupier/script/start_tournament.rb` - that you can modify and run. It let's you specify the log file, and the hosts and ports for each player. 
 
-In order to start the ranking service use `ruby ranking_service/ranking_service.rb`.
+In order to start the ranking service use `ruby ranking_service/ranking_service.rb`. (Note, that the ranking service is automatically started by the croupier when a tournament is started.)
 
 ## Watching the results
 
@@ -118,3 +118,9 @@ During a gameplay the croupier collects all game related data and serialize it i
     bundle exec ruby visual_spectator/app.rb -p 2000
 
 [Bon appetite](http://localhost:2000).
+
+### Previous events
+
+If you wish to watch games from previous events, you can download the logs from [the previous events page on leanpoker.org](http://leanpoker.org/previous_events/). Just unpack the archive, and copy it's contents into your log directory. 
+
+The visual spectator is not entirelly backward compatible, so you may have issues watching some of the first few games. You can either revert to an earlier version of poker-croupier, or try to migrate the files. If you do migrate them, then please send the migrated files to [DeVill](https://github.com/devill) so that the archive can be updated.
